@@ -56,7 +56,23 @@ def run_agent(customer_email: str, ticket_subject: str, ticket_message: str) -> 
         choice = response.choices[0].message
 
         if choice.tool_calls:
-            messages.append(choice.model_dump())
+            messages.append(
+                {
+                    "role": "assistant",
+                    "content": choice.content,
+                    "tool_calls": [
+                        {
+                            "id": call.id,
+                            "type": "function",
+                            "function": {
+                                "name": call.function.name,
+                                "arguments": call.function.arguments,
+                            },
+                        }
+                        for call in choice.tool_calls
+                    ],
+                }
+            )
             for call in choice.tool_calls:
                 name = call.function.name
                 args = json.loads(call.function.arguments)
