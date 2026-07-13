@@ -8,8 +8,6 @@ A generic chatbot can answer FAQ-style questions but can't tell you *this specif
 
 ## How it works
 
-![Agent demo](screenshots/agent-demo.png)
-
 1. A ticket comes in: customer email, subject, message.
 2. The agent (`agent.py`) sends the ticket to an LLM (Groq, Llama 3.3 70B) along with 4 tool definitions:
    - `lookup_customer` — account plan, signup date, prior ticket count
@@ -40,14 +38,29 @@ A generic chatbot can answer FAQ-style questions but can't tell you *this specif
 
 ## Example
 
-**Ticket:** "My card was charged but I still can't log in to my Pro account. This is blocking my whole team. Please help ASAP." (Enterprise customer)
+Two real runs showing the agent reaching different verdicts depending on the ticket:
 
-**Agent output:**
-- Category: `billing`
-- Urgency: `high`
-- Tools used: `lookup_customer`, `check_order_status`, `search_knowledge_base`
-- Escalate: depends on account tier / order status found — enterprise + blocked-from-work tickets tend to get escalated
-- Draft reply referencing the customer's actual account/order data, not a generic template
+### Escalated — angry billing issue, Pro customer
+
+**Ticket:** "Hi, my card was charged but I still can't log in to my Pro account. This is blocking my whole team. Please help ASAP." (`raj.patel@example.com`)
+
+![Escalated example](screenshots/agent-demo-escalated.png)
+
+- Category: `billing` · Urgency: `high`
+- Tools called: `lookup_customer` → `search_knowledge_base` → `escalate_to_human`
+- Result: **escalated** — "Payment/security issue and high urgency due to team being blocked"
+
+### Resolved — calm password question, Free customer
+
+**Ticket:** "Hi, I forgot my password and the reset email never arrived. Can you help?" (`maria.gomez@example.com`)
+
+![Resolved example](screenshots/agent-demo-resolved.png)
+
+- Category: `account` · Urgency: `low`
+- Tools called: `lookup_customer` → `search_knowledge_base`
+- Result: **handled by agent, no escalation** — draft reply sent straight from the knowledge-base answer
+
+The same agent, same tools, and same prompt reach two different verdicts because it reasons about each ticket's actual content and account context rather than following a fixed script.
 
 ## Possible extensions
 
