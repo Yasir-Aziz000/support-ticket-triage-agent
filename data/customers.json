@@ -1,0 +1,30 @@
+[
+  {
+    "email": "amy.chen@example.com",
+    "name": "Amy Chen",
+    "plan": "Enterprise",
+    "signup_date": "2023-02-14",
+    "prior_tickets": 2
+  },
+  {
+    "email": "raj.patel@example.com",
+    "name": "Raj Patel",
+    "plan": "Pro",
+    "signup_date": "2024-06-01",
+    "prior_tickets": 0
+  },
+  {
+    "email": "maria.gomez@example.com",
+    "name": "Maria Gomez",
+    "plan": "Free",
+    "signup_date": "2026-05-20",
+    "prior_tickets": 5
+  },
+  {
+    "email": "tom.becker@example.com",
+    "name": "Tom Becker",
+    "plan": "Pro",
+    "signup_date": "2022-11-09",
+    "prior_tickets": 1
+  }
+]

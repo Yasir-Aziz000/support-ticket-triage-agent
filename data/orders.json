@@ -1,0 +1,30 @@
+[
+  {
+    "order_id": "ORD-1001",
+    "customer_email": "amy.chen@example.com",
+    "product": "Team Plan Seats (x5)",
+    "status": "delivered",
+    "tracking_number": null
+  },
+  {
+    "order_id": "ORD-1002",
+    "customer_email": "raj.patel@example.com",
+    "product": "Pro Plan Renewal",
+    "status": "payment_failed",
+    "tracking_number": null
+  },
+  {
+    "order_id": "ORD-1003",
+    "customer_email": "maria.gomez@example.com",
+    "product": "Branded USB Drive (swag)",
+    "status": "shipped",
+    "tracking_number": "1Z999AA10123456784"
+  },
+  {
+    "order_id": "ORD-1004",
+    "customer_email": "tom.becker@example.com",
+    "product": "Pro Plan Upgrade",
+    "status": "processing",
+    "tracking_number": null
+  }
+]

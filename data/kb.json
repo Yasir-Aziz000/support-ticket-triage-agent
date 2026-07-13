@@ -1,0 +1,32 @@
+[
+  {
+    "title": "How to reset your password",
+    "keywords": ["password", "reset", "login", "forgot", "locked out"],
+    "content": "Go to the login page and click 'Forgot password'. A reset link is emailed within 5 minutes. Links expire after 30 minutes."
+  },
+  {
+    "title": "Billing and failed payments",
+    "keywords": ["billing", "payment", "failed", "charge", "invoice", "card declined"],
+    "content": "Failed payments are retried automatically 3 times over 5 days. Customers can update their card under Account > Billing > Payment Methods."
+  },
+  {
+    "title": "Order and shipping status",
+    "keywords": ["order", "shipping", "tracking", "delivery", "package"],
+    "content": "Shipping orders receive a tracking number by email once dispatched. Delivery typically takes 5-7 business days domestically."
+  },
+  {
+    "title": "Upgrading or downgrading your plan",
+    "keywords": ["upgrade", "downgrade", "plan", "subscription", "cancel"],
+    "content": "Plan changes take effect immediately and are billed pro-rata. Cancellations take effect at the end of the current billing cycle."
+  },
+  {
+    "title": "API rate limits",
+    "keywords": ["api", "rate limit", "429", "throttle", "quota"],
+    "content": "Free plan: 60 requests/hour. Pro plan: 1000 requests/hour. Enterprise: custom limits, contact your account manager."
+  },
+  {
+    "title": "Data export and account deletion",
+    "keywords": ["export", "delete account", "gdpr", "data request", "download my data"],
+    "content": "Data exports can be requested under Account > Privacy > Export Data, delivered within 48 hours. Account deletion is permanent after a 14-day grace period."
+  }
+]
